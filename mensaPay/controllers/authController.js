@@ -8,7 +8,7 @@ export const cadastro = async (req, res) => {
     if (!email) return res.status(422).json({ msg: 'Email is required' })
     if (!pass) return res.status(422).json({ msg: 'Password is required' })
 
-    if (await User.findOne({ emai: email })) {
+    if (await User.findOne({ email })) {
         return res.status(422).json({ msg: 'Please use another email' })
     }
 
